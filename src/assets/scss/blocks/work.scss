@@ -1,0 +1,94 @@
+.work {
+    margin-bottom: 3rem;
+    overflow: hidden;
+    display: flex;
+    
+    background-color: $primary;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .35);
+    border-radius: 5px;
+    
+    @include breakpoint($mobile-bp) {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    
+}
+
+.work__preview {
+    max-width: 31rem;
+    
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+        @include breakpoint($mobile-bp) {
+            border-radius: 2px;
+            box-shadow: 0 2px 12px rgba($black, .3);
+    }
+    }
+    
+    @include breakpoint($mobile-bp) {
+        width: 100%;
+        height: 15rem;
+        
+        
+    }
+}
+
+.work__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 29rem;
+    
+    padding: 2.5rem;
+    
+    @include breakpoint($mobile-bp) {
+        max-width: none;
+        padding: 1.5rem 1.5rem 2rem;
+        }
+}
+
+.work__title {
+    margin-bottom: 3rem;
+    font-size: 2.4rem;
+    color: $white;
+    font-weight: 500;
+    
+    a {
+        color: inherit;
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    @include breakpoint($mobile-bp) {
+        margin-bottom: 2rem;
+    }
+}
+
+.work__description {
+    margin-bottom: 3rem;
+    color: #d2d2d2;
+    line-height: 1.6;
+    font-size: 1.6rem;
+    font-weight: 300;
+    
+    @include breakpoint($mobile-bp) {
+        margin-bottom: 2rem;
+    }
+}
+
+.work__footer {
+
+    text-align: right;
+    
+    @include breakpoint($mobile-bp) {
+        text-align: center;
+    }
+}

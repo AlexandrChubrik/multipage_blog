@@ -1,0 +1,82 @@
+.add-post {
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+
+    background-color: $secondary;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .45);
+    border-radius: 5px;
+    
+    @include breakpoint($mobile-bp) {
+        padding: 1.5rem;
+    }
+}
+
+.add-post__form {
+    display: flex;
+    align-items: flex-end;
+}
+
+.add-post__form-actions {
+    width: 12rem;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    
+    @include breakpoint($mobile-bp) {
+        width: 9rem;
+    }
+}
+
+.add-post__textarea {
+    display: flex;
+    flex-grow: 1;
+    width: 80%;
+    height: 3.4rem;
+    overflow: hidden;
+
+    border: none;
+    background: transparent;
+
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: $white;
+
+    resize: none;
+
+    ::placeholder {
+        color: #D2D2D2;
+    }
+}
+
+.add-post__file {
+    display: block;
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 50%;
+    background: #EBEBEB url("../images/add_photo.svg") center no-repeat;
+    cursor: pointer;
+
+    @include breakpoint($mobile-bp) {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    
+    
+}
+
+.add-post__send {
+    display: block;
+    width: 4.4rem;
+    height: 4.4rem;
+    padding-left: 1rem;
+
+    background-color: #3137C9;
+    border: none;
+    border-radius: 50%;
+    
+    @include breakpoint($mobile-bp) {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+}
