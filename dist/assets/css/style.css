@@ -373,8 +373,14 @@ body {
     color: white;
 }
 
-body.no-scroll, body.show-sidebar {
+body.no-scroll {
     overflow: hidden;
+}
+
+@media (max-width: 991px) {
+    body.show-sidebar {
+        overflow: hidden;
+    }
 }
 
 *,
@@ -393,23 +399,12 @@ body.no-scroll, body.show-sidebar {
     justify-content: center;
     min-height: 100vh;
     overflow: hidden;
+    position: relative;
 }
 
 @media (max-width: 991px) {
     .show-sidebar .page {
         position: relative;
-    }
-
-    .show-sidebar .page:after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 100;
-        background-color: rgba(0, 0, 0, 0.8);
     }
 }
 
@@ -421,6 +416,19 @@ body.no-scroll, body.show-sidebar {
 
 .page__title--center {
     text-align: center;
+}
+
+@media (max-width: 991px) {
+    .page__mask {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 }
 
 .header {
@@ -589,6 +597,12 @@ body.no-scroll, body.show-sidebar {
     padding: 8rem 8rem 2.5rem;
     background-color: #202020;
     border-radius: 5px;
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    transition: opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+    transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
+    transition: transform 200ms ease-in-out, opacity 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
 }
 
 .modal__content--contact {
@@ -598,6 +612,12 @@ body.no-scroll, body.show-sidebar {
 .modal__content--story {
     padding: 0;
     background: none;
+}
+
+@media (max-width: 991px) {
+    .modal__content {
+        padding: 5rem 3rem 3rem;
+    }
 }
 
 .modal__close {
@@ -1075,8 +1095,8 @@ body.no-scroll, body.show-sidebar {
 .add-post__form {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-    align-items: center;
+    -ms-flex-align: end;
+    align-items: flex-end;
 }
 
 .add-post__form-actions {
@@ -1101,7 +1121,7 @@ body.no-scroll, body.show-sidebar {
     -ms-flex-positive: 1;
     flex-grow: 1;
     width: 80%;
-    height: 3rem;
+    height: 3.4rem;
     overflow: hidden;
     border: none;
     background: transparent;
